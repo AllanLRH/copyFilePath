@@ -9,6 +9,7 @@
 from __future__ import print_function  # For Python 2.7 backward compatability
 import os
 import sys
+# Handle possible missing pyperclip module
 try:  # Place absolute path in clipboard if pyperclip module is installed
     import pyperclip
     returnAbsPath = lambda pth: pyperclip.copy(os.path.abspath(pth))
@@ -18,6 +19,7 @@ except ImportError:  # If not installed, print absolute path to stdout
           file=sys.stderr, sep='\n')
     returnAbsPath = lambda pth: print(os.path.abspath(pth))
 
+# Handle wrong number of inputs
 if len(sys.argv) != 2:
     print('Error, you must specify exactly one file or folder', file=sys.stderr)
     sys.exit(1)
@@ -25,6 +27,6 @@ if len(sys.argv) != 2:
 userInput = os.path.expanduser(os.path.expandvars(sys.argv[1]))  # Expand paths
 if os.path.exists(userInput):
     returnAbsPath(userInput)
-else:
+else:  # Handle missing target file or folder
     print('Error, specified file or folder does not exist', file=sys.stderr)
     sys.exit(1)
