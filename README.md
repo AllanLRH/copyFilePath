@@ -9,4 +9,4 @@ On mac it's called `pbcopy`, so a convenient alias this program could be
 `alias cfp='/path/to/copyFilePath.py | pbcopy'`.
 
 ## Compatibility
-Tested on Mac OS X Yosemite 10.10.5 with Python 2.7.11 and 3.5.1.
+Tested on Mac OS X Yosemite 10.10.5 with Python 2.7.11 and 3.5.1 and pyperclip 1.5.27.
