@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf8 -*-
 
-########################################################################
-# Print or copy abssolute path of file or folder to stdout if it exist #
-########################################################################
+###################################################################
+# Copy absolute path of target file or folder if it exist.        #
+# Absolute path is printet to stdout if `import pyperclip` fails. #
+###################################################################
 
 from __future__ import print_function  # For Python 2.7 backward compatability
 import os
